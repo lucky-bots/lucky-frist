@@ -19,7 +19,7 @@
   $LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
     $LINEDatas['token'] = "KkIIUDSiGrMEoeUi+iRiZNfY5Gce7zyINhGfZbR0ln+VcCZTDRg3E01IlU5QuERIQ7SABUzH/J6G7ReeCFlgM0xQG388iOrY4e5WKZ6m2rOR/6Twg8NeCnD894e5WKZ6m2rOR/6Twg8NeCnD894E5WKZ6m2rOR/6Twg8NeCnD89";
 
-    $results = sentMessage($encodeJson,$LINEDatas);
+    $results = sendMessage($encodeJson,$LINEDatas);
 
   /*Return HTTP Request 200*/
   http_response_code(200);
