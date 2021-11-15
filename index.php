@@ -8,7 +8,7 @@
 
   $replyToken = $deCode['events'][0]['replyToken'];
   $userId = $deCode['events'][0]['source']['userId'];
-  $text = $deCode['events'][0]['messages']['text'];
+  $text = $deCode['events'][0]['message']['text'];
 
   $messages = [];
   $messages['replyToken'] = $replyToken;
