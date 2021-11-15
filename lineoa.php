@@ -45,7 +45,8 @@ $replymessage["type"] = "text";
 $replymessage["text"] = $question." ".$result;
 }
 $lineData['URL'] = "https://api.line.me/v2/bot/message/reply";
-$lineData['AccessToken'] = "########";
+$lineData['AccessToken'] = "KkIIUDSiGrMEoeUi+iRiZNfY5Gce7zyINhGfZbR0ln+VcCZTDRg3E01IlU5QuERIQ7SABUzH/J6G7ReeCFlgM0xQG388iOrY4e5WKZ6m2rOR/6Twg8NeCnD894e5WKZ6m2rOR/6Twg8NeCnD894E5WKZ6m2rOR/6Twg8NeCnD89";
+
 $replyJson["replyToken"] = $replyToken;
 $replyJson["messages"][0] = $replymessage;
 $encodeJson = json_encode($replyJson);
