@@ -33,10 +33,10 @@
     return $datas;
   }
 
-  function sentMessage($encodeJson,$datas)
+  function sendMessage($encodeJson,$datas)
   {
     $datasReturn = [];
-    $curl = curl_init();
+    $curl = curl_init($token["URL"]);
     curl_setopt_array($curl, array(
       CURLOPT_URL => $datas['url'],
       CURLOPT_RETURNTRANSFER => true,
