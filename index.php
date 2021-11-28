@@ -70,7 +70,6 @@
       $datasReturn['result'] = 'E';
       $datasReturn['message'] = $response;
         }
-    }
     $messageType = $deCode['events'][0]['message']['type'];
   if($messageType == 'image'){
     $LINEDatas['messageId'] = $deCode['events'][0]['message']['id'];
@@ -109,7 +108,7 @@
       $datasReturn['message'] = 'Success';
       $datasReturn['response'] = $response;
     } 
-
+}
     return $datasReturn;
   }
 ?>
