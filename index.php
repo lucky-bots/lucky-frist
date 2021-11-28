@@ -38,7 +38,7 @@
     $datasReturn = [];
     $curl = curl_init();
     curl_setopt_array($curl, array(
-      CURLOPT_URL => $datas['url'],
+      CURLOPT_URL => $LINEdatas['url'],
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => "",
       CURLOPT_MAXREDIRS => 10,
@@ -47,7 +47,7 @@
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_POSTFIELDS => $encodeJson,
       CURLOPT_HTTPHEADER => array(
-        "authorization: Bearer ".$datas['token'],
+        "authorization: Bearer ".$LINEdatas['token'],
         "cache-control: no-cache",
         "content-type: application/json; charset=UTF-8",
       ),
